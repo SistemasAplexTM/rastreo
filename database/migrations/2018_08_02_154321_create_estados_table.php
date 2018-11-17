@@ -18,7 +18,7 @@ class CreateEstadosTable extends Migration
             $table->string('descripcion', 30);
             $table->string('color', 10);
             $table->timestamps();
-            $table->softDeletes();
+            // $table->softDeletes();
         });
     }
 

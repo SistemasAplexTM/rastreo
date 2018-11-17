@@ -1,143 +1,54 @@
 <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar">
-        <ul class="nav nav-tabs tab-nav-right" role="tablist">
-            <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-            <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
-        </ul>
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
-                <ul class="demo-choose-skin">
-                    <li data-theme="red" class="active">
-                        <div class="red"></div>
-                        <span>Red</span>
-                    </li>
-                    <li data-theme="pink">
-                        <div class="pink"></div>
-                        <span>Pink</span>
-                    </li>
-                    <li data-theme="purple">
-                        <div class="purple"></div>
-                        <span>Purple</span>
-                    </li>
-                    <li data-theme="deep-purple">
-                        <div class="deep-purple"></div>
-                        <span>Deep Purple</span>
-                    </li>
-                    <li data-theme="indigo">
-                        <div class="indigo"></div>
-                        <span>Indigo</span>
-                    </li>
-                    <li data-theme="blue">
-                        <div class="blue"></div>
-                        <span>Blue</span>
-                    </li>
-                    <li data-theme="light-blue">
-                        <div class="light-blue"></div>
-                        <span>Light Blue</span>
-                    </li>
-                    <li data-theme="cyan">
-                        <div class="cyan"></div>
-                        <span>Cyan</span>
-                    </li>
-                    <li data-theme="teal">
-                        <div class="teal"></div>
-                        <span>Teal</span>
-                    </li>
-                    <li data-theme="green">
-                        <div class="green"></div>
-                        <span>Green</span>
-                    </li>
-                    <li data-theme="light-green">
-                        <div class="light-green"></div>
-                        <span>Light Green</span>
-                    </li>
-                    <li data-theme="lime">
-                        <div class="lime"></div>
-                        <span>Lime</span>
-                    </li>
-                    <li data-theme="yellow">
-                        <div class="yellow"></div>
-                        <span>Yellow</span>
-                    </li>
-                    <li data-theme="amber">
-                        <div class="amber"></div>
-                        <span>Amber</span>
-                    </li>
-                    <li data-theme="orange">
-                        <div class="orange"></div>
-                        <span>Orange</span>
-                    </li>
-                    <li data-theme="deep-orange">
-                        <div class="deep-orange"></div>
-                        <span>Deep Orange</span>
-                    </li>
-                    <li data-theme="brown">
-                        <div class="brown"></div>
-                        <span>Brown</span>
-                    </li>
-                    <li data-theme="grey">
-                        <div class="grey"></div>
-                        <span>Grey</span>
-                    </li>
-                    <li data-theme="blue-grey">
-                        <div class="blue-grey"></div>
-                        <span>Blue Grey</span>
-                    </li>
-                    <li data-theme="black">
-                        <div class="black"></div>
-                        <span>Black</span>
-                    </li>
-                </ul>
+<aside id="rightsidebar" class="right-sidebar">
+    <div>
+        <p>GENERAL SETTINGS</p>
+        <div class="panel-group" id="accordion_17" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-col-pink">
+                <div class="panel-heading" role="tab" id="headingOne_17">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion_17" href="#collapseOne_17" aria-expanded="true" aria-controls="collapseOne_17">
+                            <i class="material-icons">perm_contact_calendar</i> Collapsible Group
+                            Item #1
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne_17" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_17">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven't heard of them
+                        accusamus labore sustainable VHS.
+                    </div>
+                </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="settings">
-                <div class="demo-settings">
-                    <p>GENERAL SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Report Panel Usage</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Email Redirect</span>
-                            <div class="switch">
-                                <label><input type="checkbox"><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>SYSTEM SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Notifications</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Auto Updates</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>ACCOUNT SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Offline</span>
-                            <div class="switch">
-                                <label><input type="checkbox"><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Location Permission</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="panel panel-col-orange">
+                <div class="panel-heading" role="tab" id="headingFour_17">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_17" href="#collapseFour_17" aria-expanded="false"
+                           aria-controls="collapseFour_17">
+                            <i class="material-icons">folder_shared</i> Collapsible Group Item
+                            #4
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour_17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour_17">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven't heard of them
+                        accusamus labore sustainable VHS.
+                    </div>
                 </div>
             </div>
         </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
+    </div>
+</aside>
+<!-- #END# Right Sidebar -->

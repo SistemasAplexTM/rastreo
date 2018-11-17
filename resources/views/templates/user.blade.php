@@ -11,7 +11,7 @@
                 <div class="row">
                 	<div class="col-md-10 col-md-offset-1 text-center">
                         <div class="image">
-            				<img class="img-circle" src="{{ asset('images/user.png') }}" width="70" height="70" alt="User" />
+            				<img class="img-circle" src="{{ asset('img/logo_impocargo_mundo.png') }}" width="70" height="70" alt="User" />
                     	</div>
                     </div>
                 </div>
@@ -23,11 +23,11 @@
                             </span>
                             <div class="form-line" :class="{'error focused': errors.has('name') }">
                                 <input
-                                    name="name" 
-                                    v-model="name" 
-                                    v-validate="'required'"
-                                    type="text" 
-                                    class="form-control" 
+                                    name="name"
+                                    v-model="name"
+                                    v-validate.disable="'required'"
+                                    type="text"
+                                    class="form-control"
                                     placeholder="Nombre completo">
                             </div>
                             <label v-show="errors.has('name')" class="error">@{{ errors.first('name') }}</label>
@@ -41,12 +41,13 @@
                                 <i class="material-icons">email</i>
                             </span>
                             <div class="form-line" :class="{'error focused': errors.has('email') }">
-                                <input 
-                                    name="email" 
-                                    v-model="email" 
-                                    v-validate="'required|email|unique'" 
-                                    class="form-control" 
-                                    type="text" 
+                                <input
+                                    name="email"
+                                    v-model="email"
+                                    v-validate.disable="'required|email'"
+                                    {{-- v-validate="'required|email|unique'" --}}
+                                    class="form-control"
+                                    type="text"
                                     placeholder="Correo">
                             </div>
                             <label v-show="errors.has('email')" class="error">@{{ errors.first('email') }}</label>
@@ -60,12 +61,12 @@
                                 <i class="material-icons">vpn_key</i>
                             </span>
                             <div class="form-line" :class="{'error focused': errors.has('password') }">
-                                <input 
-                                    name="password" 
-                                    v-model="password" 
-                                    v-validate="'required|min:4'" 
-                                    type="password" 
-                                    class="form-control" 
+                                <input
+                                    name="password"
+                                    v-model="password"
+                                    v-validate.disable="[editing ? '': 'required|min:6']"
+                                    type="password"
+                                    class="form-control"
                                     placeholder="Contraseña">
                             </div>
                             <label v-show="errors.has('password')" class="error">@{{ errors.first('password') }}</label>
@@ -79,15 +80,15 @@
                                 <i class="material-icons">vpn_key</i>
                             </span>
                             <div class="form-line" :class="{'error focused': errors.has('password_confirm') }">
-                                <input 
-                                    name="password_confirm" 
-                                    v-model="password_confirm" 
-                                    v-validate="'required|confirmed:password'" 
-                                    type="password" 
-                                    class="form-control" 
+                                <input
+                                    name="password_confirm"
+                                    v-model="password_confirm"
+                                    {{-- v-validate="'required|confirmed:password'" --}}
+                                    type="password"
+                                    class="form-control"
                                     placeholder="Confirmar contraseña">
                             </div>
-                            <label v-show="errors.has('password_confirm')" lass="error">
+                            <label v-show="errors.has('password_confirm')" class="error">
                                 @{{ errors.first('password_confirm') }}
                             </label>
                         </div>

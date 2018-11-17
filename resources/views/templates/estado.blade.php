@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Usuarios' )
+@section('title', 'Estados' )
 @section('content')
 <div class="row" id="estado">
 	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -16,11 +16,11 @@
                             </span>
                             <div class="form-line" :class="{'error focused': errors.has('descripcion') }">
                                 <input
-                                    name="descripcion" 
-                                    v-model="descripcion" 
+                                    name="descripcion"
+                                    v-model="descripcion"
                                     v-validate.disable="'required'"
-                                    type="text" 
-                                    class="form-control" 
+                                    type="text"
+                                    class="form-control"
                                     placeholder="Descripción">
                             </div>
                             <label v-show="errors.has('descripcion')" class="error">@{{ errors.first('descripcion') }}</label>
@@ -44,11 +44,11 @@
                             <div class="form-line" :class="{'error focused': errors.has('descripcion') }">
 
                                 <input
-                                    name="descripcion" 
-                                    v-model="descripcion" 
+                                    name="descripcion"
+                                    v-model="descripcion"
                                     v-validate="'required'"
-                                    type="text" 
-                                    class="form-control" 
+                                    type="text"
+                                    class="form-control"
                                     placeholder="Color">
                             </div>
                             <label v-show="errors.has('descripcion')" class="error">@{{ errors.first('descripcion') }}</label>

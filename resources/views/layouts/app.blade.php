@@ -8,9 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
-    <link rel="icon" href="" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/logo_impocargo_mundo.png') }}" type="image/x-icon">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -19,12 +19,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all-themes.min.css') }}" rel="stylesheet">
+
 </head>
-<body class="theme-teal">
+<body class="theme-indigo">
     @include('layouts.preloader')
     @include('layouts.navbar')
     <section>
@@ -36,6 +38,7 @@
             @yield('content')
         </div>
     </section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     @stack('scripts')
     {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">

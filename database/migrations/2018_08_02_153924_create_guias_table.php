@@ -17,14 +17,14 @@ class CreateGuiasTable extends Migration
             $table->increments('id');
             $table->string('numero', 100);
             $table->date('fecha_embarque');
-            $table->date('fecha_dex');
+            $table->date('fecha_dex')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            // $table->softDeletes();
         });
 
         Schema::table('guias', function (Blueprint $table) {
             $table->unsignedInteger('tipo_guia_id')  ;
-            $table->foreign('tipo_guia_id')->references('id')->on('tipo_guias');
+            $table->foreign('tipo_guia_id')->references('id')->on('tipo_guias')->onDelete('cascade');
         });
     }
 

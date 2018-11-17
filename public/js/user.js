@@ -67,13 +67,31 @@ const objVue = new Vue({
             this.$validator.validateAll().then((result) => {
                 if (result) {
                     let me = this;
-                    axios.post('user',{
+                    axios.post('users',{
                         'name': me.name,
                         'email': me.email,
                         'password': me.password
                     })
                     .then(function (response){
                         notifyMesagge('bg-teal','Registrado con éxito');
+                        me.resetForm();
+                    })
+                    .catch(function(error){
+                        alert(error);
+                    });
+                }
+            });
+        },
+        update: function(){
+            this.$validator.validateAll().then((result) => {
+                if (result) {
+                    let me = this;
+                    axios.put('users/' + this.id,{
+                        'name': me.name,
+                        'email': me.email
+                    })
+                    .then(function (response){
+                        notifyMesagge('bg-teal','Actualizado con éxito');
                         me.resetForm();
                     })
                     .catch(function(error){
@@ -106,6 +124,8 @@ const objVue = new Vue({
             this.name = "";
             this.email = "";
             this.password = "";
+            this.password_confirm = "";
+            this.editing = false;
             this.updateTable();
         },
         cancel: function(){

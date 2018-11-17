@@ -105,6 +105,7 @@ const objVue = new Vue({
         resetForm: function(){
             this.descripcion = "";
             this.color = "";
+            this.editing = false;
             $('#color').val('');
             this.updateTable();
         },

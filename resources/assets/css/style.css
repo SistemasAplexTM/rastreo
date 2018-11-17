@@ -1,4 +1,7 @@
 ﻿/* Navbar ====================================== */
+.show {
+  display: inline-block !important;
+}
 @import url(materialize.css);
 .navbar {
   font-family: "Roboto", sans-serif;
@@ -7720,7 +7723,10 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #00BCD4;
+  background-image: url('../images/image-gallery/6.jpg') !important;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -8039,4 +8045,3 @@ html.ie11 .dropdown-menu ul.menu li a {
 
 html.ie11 .bs-searchbox .form-control {
   width: 90%; }
-

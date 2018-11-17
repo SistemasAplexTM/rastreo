@@ -20,11 +20,11 @@ class CreateGuiaEstadosTable extends Migration
         });
         Schema::table('guia_estados', function (Blueprint $table) {
             $table->unsignedInteger('guia_id')  ;
-            $table->foreign('guia_id')->references('id')->on('guias');
+            $table->foreign('guia_id')->references('id')->on('guias')->onDelete('cascade');;
             $table->unsignedInteger('estado_id')  ;
-            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->foreign('estado_id')->references('id')->on('estados')->onDelete('cascade');;
             $table->unsignedInteger('user_id')  ;
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
         });
     }
 

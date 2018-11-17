@@ -28,7 +28,7 @@ class EstadoController extends Controller
     {
         Estado::create($request->all());
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -56,5 +56,11 @@ class EstadoController extends Controller
     {
         $data = Estado::all();
         return DataTables::of($data)->make(true);
+    }
+
+    public function allSelect()
+    {
+        $data = Estado::get(['id AS value', 'descripcion AS text']);
+        return $data;
     }
 }
