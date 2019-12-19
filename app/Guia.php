@@ -9,7 +9,7 @@ class Guia extends Model
 {
     // use SoftDeletes;
 
-    protected $fillable = ['tipo_guia_id', 'numero', 'fecha_embarque', 'fecha_dex'];
+    protected $fillable = ['type_guide_id', 'number', 'shipping_date', 'dex_date'];
     // protected $dates = ['deleted_at'];
 
 }

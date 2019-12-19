@@ -29,7 +29,7 @@ class DocumentoController extends Controller
      */
     public function store(Request $request)
     {
-        Documento::create($request->all());
+        Documento::create($request->data);
     }
 
     /**
@@ -58,14 +58,14 @@ class DocumentoController extends Controller
     public function all()
     {
         $data = DB::table('guias AS a')
-        ->leftjoin('tipo_guias AS b', 'a.tipo_guia_id', 'b.id')
+        ->leftjoin('tipo_guias AS b', 'a.type_guide_id', 'b.id')
         ->select(
           'a.id',
-          'a.numero',
-          'a.fecha_embarque',
-          'a.fecha_dex',
+          'a.number',
+          'a.shipping_date',
+          'a.dex_date',
           'b.descripcion AS tipo_guia',
-          'a.tipo_guia_id',
+          'a.type_guide_id',
           DB::raw('(
             SELECT
         			z.descripcion AS estado
@@ -131,7 +131,7 @@ class DocumentoController extends Controller
       DB::table('guia_estados')->where([['guia_id', $id], ['estado_id', $estado]])->delete();
     }
 
-    public function rastrear($numero)
+    public function rastrear($number)
     {
         $data = DB::table('estados AS a')
         ->leftjoin('guia_estados AS b', 'b.estado_id', 'a.id')
@@ -140,16 +140,16 @@ class DocumentoController extends Controller
           'a.id',
           'a.color',
           'a.descripcion',
-          'c.numero',
-          'c.fecha_embarque',
-          'c.fecha_dex',
-          'c.tipo_guia_id',
+          'c.number',
+          'c.shipping_date',
+          'c.dex_date',
+          'c.type_guide_id',
           'b.fecha',
           'b.observacion',
           DB::raw("DATE_FORMAT(a.created_at,'%d - %m - %Y') AS fecha_creacion"),
           DB::raw('YEAR(a.created_at) as year_data, MONTH(a.created_at) as mont_data, DAY(a.created_at) as day_data')
         )
-        ->where('c.numero', $numero)
+        ->where('c.number', $number)
         ->get();
 
         return array('code' => 200, 'data' => $data);

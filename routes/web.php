@@ -3,7 +3,7 @@
 Auth::routes();
 
 Route::get('rastreo', 'DocumentoController@rastreo')->name('rastreo');
-Route::get('rastrear/{numero}', 'DocumentoController@rastrear');
+Route::get('rastrear/{number}', 'DocumentoController@rastrear');
 Route::get('home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']],function(){
   Route::get('/', 'DocumentoController@index');
