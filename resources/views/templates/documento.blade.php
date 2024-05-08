@@ -11,11 +11,72 @@
 					@click.prevent="crear_estado">Guardar</a>
 				<a v-else class="btn bg-teal btn-sm pull-right" @click.prevent="update_estado">Actualizar</a>
 				<h2>
-					<small>Número:</small> <strong> @{{ numero }}</strong>
+					<small>Número:</small> <strong> @{{ number }}</strong>
 				</h2>
 			</div>
 			<div class="body">
-				{{-- FORMULARIO --}}
+						<div class="row">
+                <div class="col-md-12">
+									<div class="form-group">
+										<label for="tipo">Estado:</label>
+										<div :class="{'error focused': errors.has('number') }">
+											<select class="form-control" v-model="estado" name="estado">
+												<option value="">-- Seleccione estado --</option>
+												<option v-for="estado in estados" :value="estado.value">@{{ estado.text }}</option>
+											</select>
+										</div>
+									</div>
+                  <label v-show="errors.has('number')" class="error">@{{ errors.first('estado') }}</label>
+                </div>
+            </div>
+						<div class="row">
+                <div class="col-md-12">
+									<div class="form-group">
+										<label for="fecha">Fecha:</label>
+										<div :class="{'error focused': errors.has('fecha') }">
+											<input type="date" name="fecha" v-model="fecha" class="form-control">
+										</div>
+									</div>
+                  <label v-show="errors.has('fecha')" class="error">@{{ errors.first('fecha') }}</label>
+                </div>
+            </div>
+						<div class="row clearfix">
+              <div class="col-md-12">
+								<div class="form-group">
+									<label for="tipo">Observación:</label>
+									<div class="form-line">
+											<textarea rows="4" class="form-control no-resize" v-model="observacion" placeholder="Observación..."></textarea>
+									</div>
+								</div>
+                <label v-show="errors.has('numero')" class="error">@{{ errors.first('estado') }}</label>
+              </div>
+            </div>
+						<div class="row clearfix">
+								<div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+										<div class="panel-group" id="accordion_18" role="tablist" aria-multiselectable="true">
+												<div class="panel" :style="'border: 1px solid' +  dato_estado.color" v-for="dato_estado in datos_estado">
+														<div class="panel-heading" role="tab" :id="'heading_' + dato_estado.id">
+															<a class="pull-right col-white" href="#" @click.prevent="delete_estado(dato_estado.id)"><i class="material-icons">delete</i></a>
+															<a class="pull-right col-white" href="#" @click.prevent="edit_estado(dato_estado)"><i class="material-icons">edit</i></a>
+																<h4 class="panel-title" :style="'background-color:' + dato_estado.color + '!important; color: white'">
+																		<a role="button" data-toggle="collapse" data-parent="#accordion_18" :href="'#collapse' + dato_estado.id" aria-expanded="true" aria-controls="collapseOne_18">
+																				@{{ dato_estado.descripcion }}
+																				<br>
+																				<span class="fecha" style="font-size: 13px">
+																					Fecha: <strong>@{{ dato_estado.fecha }}</strong>
+																				</span>
+																		</a>
+																</h4>
+														</div>
+														<div :id="'collapse' + dato_estado.id" class="panel-collapse collapse in" role="tabpanel" :aria-labelledby="'heading' + dato_estado.id">
+																<div class="panel-body">
+																	@{{ dato_estado.observacion }}
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
 			</div>
 		</div>
 	</div>
